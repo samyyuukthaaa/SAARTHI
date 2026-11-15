@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "slug": "profile-agent",
+  "createdAt": 1794731688338,
+  "updatedAt": 1794731688338,
+  "name": "Profile Agent",
+  "description": "Reads a student's CV text and psychometric test answers and saves a structured profile: skills, projects, education, interests and preferred languages. Never guesses skills that aren't in the CV.",
+  "function": "engineering",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Anthropic API)",
+  "preferredModel": "claude-opus-4-7",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "claude-agent-sdk-python"
+  ],
+  "prompts": [
+    "profile-agent-system"
+  ],
+  "evals": [
+    "profile-agent-smoke"
+  ],
+  "tools": [],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "claude-agent-sdk-python",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}

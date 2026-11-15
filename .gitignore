@@ -13,3 +13,11 @@ backend/*.db
 backend/*.db-*
 __pycache__/
 .pytest_cache/
+.env.local
+.venv/
+.codenow/runs/
+
+# Saarathi generated files
+agents/profile/tools/data/profile.json
+.codenow/agent-studio/traces/
+.codenow/sessions/
