@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "slug": "interviewer-agent",
+  "createdAt": 1794762000000,
+  "updatedAt": 1794762000000,
+  "name": "Interviewer",
+  "description": "Conducts realistic HR and Technical mock interviews. Asks one question at a time, never reveals numerical scores during the interview, and gives structural hints without disclosing full answers.",
+  "function": "interviewing",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Gemini API)",
+  "preferredModel": "gemini-3.5-flash-lite",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "saarathi",
+    "interviewer",
+    "gemini"
+  ],
+  "prompts": [
+    "interviewer-agent-system"
+  ],
+  "evals": [
+    "interviewer-agent-smoke"
+  ],
+  "tools": [
+    "get_job_requirements",
+    "get_profile",
+    "next_question",
+    "score_answer",
+    "give_hint"
+  ],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "google-genai",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}
