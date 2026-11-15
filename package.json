@@ -5,6 +5,9 @@
   "description": "Saarathi — your career copilot. Website for job discovery, learning and interview practice.",
   "scripts": {
     "dev": "next dev",
+    "dev:all": "node scripts/dev.mjs",
+    "dev:backend": "python -m uvicorn app.main:app --app-dir backend --reload --host 127.0.0.1 --port 8000",
+    "dev:frontend": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

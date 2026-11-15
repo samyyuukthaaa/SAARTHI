@@ -5,12 +5,30 @@ import { useEffect, useState } from "react";
 import * as mock from "./mock";
 import type { Job, Report, Resource, Task } from "./mock";
 
-const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-const WS = process.env.NEXT_PUBLIC_WS_URL ?? "ws://localhost:8000";
+export function getApiUrl(): string {
+  if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+  if (typeof window !== "undefined" && window.location) {
+    return `${window.location.protocol}//${window.location.hostname}:8000`;
+  }
+  return "http://localhost:8000";
+}
+
+export function getWsUrl(): string {
+  if (process.env.NEXT_PUBLIC_WS_URL) return process.env.NEXT_PUBLIC_WS_URL;
+  if (typeof window !== "undefined" && window.location) {
+    const proto = window.location.protocol === "https:" ? "wss:" : "ws:";
+    return `${proto}//${window.location.hostname}:8000`;
+  }
+  return "ws://localhost:8000";
+}
+
+export const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+export const WS = process.env.NEXT_PUBLIC_WS_URL ?? "ws://localhost:8000";
 export const USE_MOCKS = process.env.NEXT_PUBLIC_USE_MOCKS !== "false";
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API}${path}`, {
+  const baseUrl = getApiUrl();
+  const res = await fetch(`${baseUrl}${path}`, {
     credentials: "include",
     ...init,
     headers: init?.body && !(init.body instanceof FormData) ? { "Content-Type": "application/json", ...init?.headers } : init?.headers,
@@ -107,7 +125,7 @@ export type ServerEvent =
   | { type: "end"; reportId: string | null; text: string };
 
 export function openInterview(sessionId: string, round: string, mode: string, onEvent: (e: ServerEvent) => void, onError: () => void) {
-  const ws = new WebSocket(`${WS}/interview/${sessionId}?round=${round}&mode=${mode}`);
+  const ws = new WebSocket(`${getWsUrl()}/interview/${sessionId}?round=${round}&mode=${mode}`);
   ws.onmessage = (m) => onEvent(JSON.parse(m.data));
   ws.onerror = onError;
   const sendJson = (o: object) => ws.readyState === 1 && ws.send(JSON.stringify(o));
