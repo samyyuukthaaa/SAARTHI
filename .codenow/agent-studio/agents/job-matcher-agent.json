@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "slug": "job-matcher-agent",
+  "createdAt": 1794754492374,
+  "updatedAt": 1794754492374,
+  "name": "Job Matcher",
+  "description": "Ranks relevant job opportunities for students and freshers based on their skills, education, interests and preferred location. Searches cached job listings first and uses live job search when fewer than three suitable cached jobs are found. Explains why each job matches the student's profile and never invents job listings.",
+  "function": "engineering",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Anthropic API)",
+  "preferredModel": "claude-opus-4-7",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "claude-agent-sdk-python"
+  ],
+  "prompts": [
+    "job-matcher-agent-system"
+  ],
+  "evals": [
+    "job-matcher-agent-smoke"
+  ],
+  "tools": [],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "claude-agent-sdk-python",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}
