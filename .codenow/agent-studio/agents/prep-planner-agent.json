@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "slug": "prep-planner-agent",
+  "createdAt": 1794760000000,
+  "updatedAt": 1794760000000,
+  "name": "Prep Planner",
+  "description": "Builds and personalizes day-by-day preparation plans within the student's daily time limit and application deadline, and writes practice quizzes. Asks before modifying an existing plan.",
+  "function": "planning",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Gemini API)",
+  "preferredModel": "gemini-3.5-flash-lite",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "saarathi",
+    "prep-planner",
+    "gemini"
+  ],
+  "prompts": [
+    "prep-planner-agent-system"
+  ],
+  "evals": [
+    "prep-planner-agent-smoke"
+  ],
+  "tools": [
+    "get_shortlist",
+    "get_learning_items",
+    "get_constraints",
+    "create_todo_plan",
+    "generate_quiz"
+  ],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "google-genai",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}
