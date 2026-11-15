@@ -1,0 +1,18 @@
+{
+  "name": "job-matcher-agent-smoke",
+  "description": "Smoke test for Job Matcher agent tools",
+  "cases": [
+    {
+      "input": "Find jobs that match my profile",
+      "expected_contains": "Accenture"
+    },
+    {
+      "input": "Search for jobs matching java and sql skills in Hyderabad",
+      "expected_contains": "java"
+    },
+    {
+      "input": "Explain why the Accenture Associate Software Engineer role matches my profile",
+      "expected_contains": "match"
+    }
+  ]
+}
