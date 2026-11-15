@@ -1,0 +1,19 @@
+{
+  "name": "report-smoke",
+  "description": "Report agent basics",
+  "cases": [
+    {
+      "input": "Write the report for session demo",
+      "expected_contains": "eye contact"
+    },
+    {
+      "input": "Write the report for session demo",
+      "expected_min_length": 200
+    },
+    {
+      "input": "Write the report for session demo",
+      "expected_regex": "1\\.[\\s\\S]*2\\.[\\s\\S]*3\\.",
+      "forbidden_phrases": ["as an AI"]
+    }
+  ]
+}

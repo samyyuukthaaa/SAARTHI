@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "slug": "report-agent",
+  "createdAt": 1794764000000,
+  "updatedAt": 1794764000000,
+  "name": "Report",
+  "description": "Writes a short interview report from the transcript and tracking metrics: scores, three concrete fixes, each linked to a lesson.",
+  "function": "reporting",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Gemini API)",
+  "preferredModel": "gemini-3.5-flash-lite",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "saarathi",
+    "report",
+    "gemini"
+  ],
+  "prompts": [
+    "report-agent-system"
+  ],
+  "evals": [
+    "report-agent-smoke"
+  ],
+  "tools": [
+    "get_transcript",
+    "get_session_metrics",
+    "get_learning_items",
+    "write_report"
+  ],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "google-genai",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}
