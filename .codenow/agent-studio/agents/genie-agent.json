@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "slug": "genie-agent",
+  "createdAt": 1794766000000,
+  "updatedAt": 1794766000000,
+  "name": "Genie",
+  "description": "Voice assistant for first-time job seekers in India. Replies in the user's language (Hindi or English), keeps answers phone-short, routes each question to the right specialist agent, and responds to distress warmly with Tele-MANAS 14416.",
+  "function": "orchestration",
+  "type": "orchestrator",
+  "version": "0.1.0",
+  "builtBy": "",
+  "runsAt": "Self-hosted (Gemini API)",
+  "preferredModel": "gemini-3.5-flash-lite",
+  "invocationUrl": "",
+  "authMode": "none",
+  "promptField": "prompt",
+  "responseField": "response",
+  "tags": [
+    "saarathi",
+    "genie",
+    "orchestrator",
+    "gemini"
+  ],
+  "prompts": [
+    "genie-agent-system"
+  ],
+  "evals": [
+    "genie-smoke"
+  ],
+  "tools": [
+    "get_today_tasks",
+    "flag_distress"
+  ],
+  "subAgents": [
+    "profile-agent",
+    "job-matcher-agent",
+    "learning-curator-agent",
+    "prep-planner-agent",
+    "interviewer-agent",
+    "report-agent"
+  ],
+  "dataAccess": [],
+  "price": "free",
+  "origin": "built",
+  "lifecycle": "draft",
+  "kit": "google-genai",
+  "memoryConfig": {
+    "enabled": true,
+    "provider": "codenow-ledger",
+    "contextBudget": 2000,
+    "semantic": true
+  }
+}
