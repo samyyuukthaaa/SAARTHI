@@ -20,7 +20,9 @@ from tools.search_live_jobs import search_live_jobs
 from tools.explain_match import explain_match
 
 
-# Load Gemini API key
+# Load Gemini API key — check agent-local, then project root
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env.local"))
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", "profile", ".env.local"))
 load_dotenv(".env.local")
 
 API_KEY = os.getenv("GEMINI_API_KEY")
