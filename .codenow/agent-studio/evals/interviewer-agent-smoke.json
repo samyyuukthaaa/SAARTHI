@@ -1,0 +1,18 @@
+{
+  "name": "interviewer-agent-smoke",
+  "description": "Smoke evaluation cases for Interviewer Agent",
+  "cases": [
+    {
+      "input": "Start my HR mock interview round. I am ready for the first question.",
+      "expected_contains": "yourself"
+    },
+    {
+      "input": "Can you give me a hint on how to structure an answer to a behavioral interview question?",
+      "expected_contains": "STAR"
+    },
+    {
+      "input": "What is the technical question for this round?",
+      "expected_contains": "?"
+    }
+  ]
+}
